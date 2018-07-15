@@ -1,0 +1,8 @@
+elasticsearch_version: 0.2.1
+elasticsearch_sha1: b120109bc1c866bbda80a3df89dfeded4abe122f
+logstash_version: 0.1.0
+logstash_sha1: 0fec692d19ac5c2d8c658550b91b9b80033c3785
+kibana_version: 0.1.0
+kibana_sha1: d47a34f51879d6686f055dcb105cd50d958f0f38
+nginx_version: 1.13.12
+nginx_sha1: bf156c545c45ed4e57563274f91dbd433000d776

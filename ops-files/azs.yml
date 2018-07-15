@@ -1,0 +1,6 @@
+- type: replace
+  path: /instance_groups/name=elasticsearch-master/azs
+  value: ((elasticsearch_master_azs))
+- type: replace
+  path: /instance_groups/name=logstash/azs
+  value: ((logstash_azs))

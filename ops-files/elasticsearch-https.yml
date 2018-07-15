@@ -1,0 +1,71 @@
+- type: replace
+  path: /releases/name=nginx?
+  value:
+    name: nginx
+    version: ((nginx_version))
+    url: https://bosh.io/d/github.com/cloudfoundry-community/nginx-release?v=((nginx_version))
+    sha1: ((nginx_sha1)))
+
+- type: replace
+  path: /instance_groups/name=elasticsearch-master/jobs/name=nginx?
+  value:
+    name: nginx
+    release: nginx
+    properties:
+      ssl_key: ((nginx.private_key))
+      ssl_chained_cert: ((nginx.certificate))
+	      nginx_conf: |
+		worker_processes  1;
+        error_log /var/vcap/sys/log/nginx/error.log   warn;
+        events {
+          worker_connections  1024;
+        }
+        http {
+          server {
+            listen 80;
+            return 301 https://$host$request_uri;
+          }
+          server {
+            listen 443 default_server ssl;
+            ssl on;
+            ssl_certificate     /var/vcap/jobs/nginx/etc/ssl_chained.crt.pem;
+            ssl_certificate_key /var/vcap/jobs/nginx/etc/ssl.key.pem;
+            ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
+
+            location / {
+              proxy_pass_request_headers on;
+              proxy_pass http://localhost:9200;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header Host $host;
+              proxy_http_version 1.1;
+              proxy_set_header Connection "";
+              proxy_buffering off;
+              client_max_body_size 0;
+              proxy_read_timeout 36000s;
+              proxy_redirect off;
+            }
+          }
+        }
+
+- type: replace
+  path: /variables?/name=nginx_ca?
+  value:
+    name: nginx_ca
+    type: certificate
+    options:
+      is_ca: true
+      common_name: nginx_ca
+
+- type: replace
+  path: /variables?/name=nginx?
+  value:
+    name: nginx
+    type: certificate
+    options:
+      ca: nginx_ca
+      common_name: 127.0.0.1
+      alternative_names:
+      - "*.sslip.io"
+      - "*.ap-northeast-1.elb.amazonaws.com"
+      - "*.elasticsearch-master.default.elastic-stack.bosh"

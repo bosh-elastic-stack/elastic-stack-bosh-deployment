@@ -1,0 +1,81 @@
+---
+name: elastic-stack
+releases:
+- name: elasticsearch
+  version: ((elasticsearch_version))
+  url: https://github.com/making/elasticsearch-boshrelease/releases/download/((elasticsearch_version))/elasticsearch-boshrelease-((elasticsearch_version)).tgz
+  sha1: ((elasticsearch_sha1))
+- name: logstash
+  version: ((logstash_version))
+  url: https://github.com/making/logstash-boshrelease/releases/download/((logstash_version))/logstash-boshrelease-((logstash_version)).tgz
+  sha1: ((logstash_sha1))
+- name: kibana
+  version: ((kibana_version))
+  url: https://github.com/making/kibana-boshrelease/releases/download/((kibana_version))/kibana-boshrelease-((kibana_version)).tgz
+  sha1: ((kibana_sha1))
+
+stemcells:
+- os: ubuntu-trusty
+  alias: trusty
+  version: latest
+
+instance_groups:
+- name: elasticsearch-master
+  jobs:
+  - name: elasticsearch
+    release: elasticsearch
+    properties:
+      elasticsearch:
+        node:
+          allow_master: true
+          allow_data: true
+    provides:
+      elasticsearch:
+        as: elasticsearch-master
+    consumes:
+      elasticsearch:
+        from: elasticsearch-master
+  - name: kibana
+    release: kibana
+    properties:
+      kibana:
+        memory_limit: 30
+  instances: 1
+  stemcell: trusty
+  update:
+    max_in_flight: 1
+    serial: true
+  azs:
+  - z1
+  - z2
+  - z3
+  vm_type: default
+  persistent_disk_type: default
+  networks: 
+  - name: default
+- name: logstash
+  jobs:
+  - name: logstash
+    release: logstash
+    properties:
+      logstash:
+        conf: ((logstash.conf))
+    consumes:
+      elasticsearch:
+        from: elasticsearch-master
+  instances: 1
+  stemcell: trusty
+  azs:
+  - z1 
+  - z2
+  - z3
+  vm_type: default
+  persistent_disk_type: default
+  networks:
+  - name: default
+
+update:
+  canaries: 1
+  max_in_flight: 3
+  canary_watch_time: 30000-600000
+  update_watch_time: 5000-600000

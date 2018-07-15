@@ -1,0 +1,6 @@
+- type: replace
+  path: /instance_groups/name=elasticsearch-master/vm_type
+  value: ((elasticsearch_master_vm_type))
+- type: replace
+  path: /instance_groups/name=logstash/vm_type
+  value: ((logstash_vm_type))

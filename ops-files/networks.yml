@@ -1,0 +1,8 @@
+- type: replace
+  path: /instance_groups/name=elasticsearch-master/networks/name=default
+  value: 
+    name: ((elasticsearch_master_network))
+- type: replace
+  path: /instance_groups/name=logstash/networks/name=default
+  value:
+    name: ((logstash_network))

@@ -1,0 +1,26 @@
+- type: replace
+  path: /variables?/-
+  value:
+    name: logstash_ca
+    type: certificate
+    options:
+      is_ca: true
+      common_name: ca
+
+- type: replace
+  path: /variables?/-
+  value:
+    name: logstash_tls
+    type: certificate
+    options:
+      ca: logstash_ca
+      common_name: 127.0.0.1
+      alternative_names:
+      - "*.sslip.io"
+      - "*.ap-northeast-1.elb.amazonaws.com"
+      - "*.elasticsearch-master.default.elastic-stack.bosh"
+- type: replace
+  path: /instance_groups/name=logstash/jobs/name=logstash/properties/logstash/tls?
+  value:
+    certificate: ((logstash_tls.certificate))
+    private_key: ((logstash_tls.private_key))

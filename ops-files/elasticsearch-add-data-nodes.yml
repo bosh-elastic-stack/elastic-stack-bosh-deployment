@@ -1,0 +1,29 @@
+- type: replace
+  path: /instance_groups/name=elasticsearch-master/jobs/name=elasticsearch/properties/elasticsearch/node/allow_data
+  value: false
+
+- type: replace
+  path: /instance_groups/name=elasticsearch-master:after
+  value:
+    name: elasticsearch-data
+    jobs:
+    - name: elasticsearch
+      release: elasticsearch
+      consumes:
+        elasticsearch:
+          from: elasticsearch-master
+      properties:
+        elasticsearch:
+          node:
+            allow_master: false
+            allow_data: true
+    instances: ((elasticsearch_data_instances))
+    stemcell: trusty
+    update:
+      max_in_flight: 1
+      serial: true
+    azs: ((elasticsearch_data_azs))
+    vm_type: ((elasticsearch_data_vm_type))
+    persistent_disk_type: ((elasticsearch_data_disk_type))
+    networks:
+    - name: ((elasticsearch_data_network))

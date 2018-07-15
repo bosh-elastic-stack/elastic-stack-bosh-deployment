@@ -1,0 +1,10 @@
+- type: remove
+  path: /instance_groups/name=elasticsearch-master/persistent_disk?
+- type: replace
+  path: /instance_groups/name=elasticsearch-master/persistent_disk_type?
+  value: ((elasticsearch_master_disk_type))
+- type: remove
+  path: /instance_groups/name=logstash/persistent_disk?
+- type: replace
+  path: /instance_groups/name=logstash/persistent_disk_type?
+  value: ((logstash_disk_type))
