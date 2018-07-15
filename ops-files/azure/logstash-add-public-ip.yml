@@ -1,5 +1,5 @@
 - type: replace
-  path: /instance_groups/name=logstash/networks/name=default/default?
+  path: /instance_groups/name=logstash/networks/0/default?
   value:
   - dns
   - gateway
