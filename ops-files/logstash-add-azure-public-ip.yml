@@ -1,0 +1,12 @@
+- type: replace
+  path: /instance_groups/name=logstash/networks/name=default/default?
+  value:
+  - dns
+  - gateway
+
+- type: replace
+  path: /instance_groups/name=logstash/networks/-
+  value: 
+    name: public
+    static_ips:
+    - ((external_ip))

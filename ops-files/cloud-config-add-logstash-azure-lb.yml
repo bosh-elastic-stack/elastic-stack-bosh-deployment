@@ -1,0 +1,7 @@
+# bosh update-cloud-config <(bosh cloud-config) -o ops-files/cloud-config-add-logstash-azure-lb.yml -v logstash_lb_name=${LB_NAME}
+- type: replace
+  path: /vm_extensions/logstash=-lb?
+  value:
+    name: logstash-lb
+    cloud_properties:
+      load_balancer: ((logstash_lb_name))

@@ -1,0 +1,8 @@
+# bosh update-cloud-config <(bosh cloud-config) -o manifest/cloud-config-add-elasticsearch-elb.yml -v elasticsearch_lb_name=${LB_NAME}
+- type: replace
+  path: /vm_extensions/name=elasticsearch-lb?
+  value:
+    name: elasticsearch-lb
+    cloud_properties:
+      elbs:
+      - ((elasticsearch_lb_name))

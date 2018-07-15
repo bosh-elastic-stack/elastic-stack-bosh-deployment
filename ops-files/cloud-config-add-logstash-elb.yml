@@ -1,0 +1,8 @@
+# bosh update-cloud-config <(bosh cloud-config) -o ops-files/cloud-config-add-logstash-elb.yml -v logstash_lb_name=${LB_NAME}
+- type: replace
+  path: /vm_extensions/logstash=-lb?
+  value:
+    name: logstash-lb
+    cloud_properties:
+      elbs:
+      - ((logstash_lb_name))
