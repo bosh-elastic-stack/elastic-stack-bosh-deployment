@@ -42,7 +42,7 @@ bosh -d elastic-stack deploy elastic-stack.yml \
      -o ops-files/logstash-add-lb.yml \
      -o ops-files/logstash-readiness-probe.yml \
      -o ops-files/kibana-https-and-basic-auth.yml \
-     -o ops-files/kibana-https-add-lb.yml \
+     -o ops-files/kibana-add-lb.yml \
      --var-file logstash.conf=logstash.conf \
      -v elasticsearch_master_instances=3 \
      -v elasticsearch_master_vm_type=minimal \
