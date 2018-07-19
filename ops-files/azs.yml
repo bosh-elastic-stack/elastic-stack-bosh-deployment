@@ -4,3 +4,6 @@
 - type: replace
   path: /instance_groups/name=logstash/azs
   value: ((logstash_azs))
+- type: replace
+  path: /instance_groups/name=kibana/azs
+  value: ((kibana_azs))

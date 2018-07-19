@@ -1,8 +1,8 @@
 elasticsearch_version: 0.3.0
 elasticsearch_sha1: 980509c7bab026320ac9d6cf60e040de97719ba4
-logstash_version: 0.1.0
-logstash_sha1: 0fec692d19ac5c2d8c658550b91b9b80033c3785
-kibana_version: 0.1.0
-kibana_sha1: d47a34f51879d6686f055dcb105cd50d958f0f38
+logstash_version: 0.2.0
+logstash_sha1: 4b5af59b71dfaa4a662ef20d84fa8712ec72ee66
+kibana_version: 0.2.0
+kibana_sha1: 7dc5dcf62b6547ee6ea4d37fcf36bb80e59a7846
 nginx_version: 1.13.12
 nginx_sha1: bf156c545c45ed4e57563274f91dbd433000d776

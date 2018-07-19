@@ -35,11 +35,6 @@ instance_groups:
     consumes:
       elasticsearch:
         from: elasticsearch-master
-  - name: kibana
-    release: kibana
-    properties:
-      kibana:
-        memory_limit: 30
   instances: 1
   stemcell: trusty
   update:
@@ -73,7 +68,28 @@ instance_groups:
   persistent_disk_type: default
   networks:
   - name: default
-
+- name: kibana
+  jobs:
+  - name: kibana
+    release: kibana
+    properties:
+      kibana:
+        memory_limit: 30
+    consumes:
+      elasticsearch:
+        from: elasticsearch-master
+  instances: 1
+  stemcell: trusty
+  update:
+    max_in_flight: 1
+    serial: true
+  azs:
+  - z1
+  - z2
+  - z3
+  vm_type: default
+  networks: 
+  - name: default
 update:
   canaries: 1
   max_in_flight: 3

@@ -4,3 +4,6 @@
 - type: replace
   path: /instance_groups/name=logstash/instances
   value: ((logstash_instances))
+- type: replace
+  path: /instance_groups/name=kibana/instances
+  value: ((kibana_instances))

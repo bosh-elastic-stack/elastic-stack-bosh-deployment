@@ -1,0 +1,12 @@
+- type: replace
+  path: /instance_groups/name=kibana/networks/0/default?
+  value:
+  - dns
+  - gateway
+
+- type: replace
+  path: /instance_groups/name=kibana/networks/-
+  value: 
+    name: public
+    static_ips:
+    - ((kibana_external_ip))
