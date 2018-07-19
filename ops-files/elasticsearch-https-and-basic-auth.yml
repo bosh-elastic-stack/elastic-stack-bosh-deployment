@@ -86,4 +86,5 @@
       alternative_names:
       - "*.sslip.io"
       - "*.ap-northeast-1.elb.amazonaws.com"
+      - "*.japaneast.cloudapp.azure.com"
       - "*.elasticsearch-master.default.elastic-stack.bosh"
