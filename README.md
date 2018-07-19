@@ -41,7 +41,8 @@ bosh -d elastic-stack deploy elastic-stack.yml \
      -o ops-files/elasticsearch-add-plugins-data.yml \
      -o ops-files/logstash-add-lb.yml \
      -o ops-files/logstash-readiness-probe.yml \
-     -o ops-files/kibana-https.yml \
+     -o ops-files/kibana-https-and-basic-auth.yml \
+     -o ops-files/kibana-https-add-lb.yml \
      --var-file logstash.conf=logstash.conf \
      -v elasticsearch_master_instances=3 \
      -v elasticsearch_master_vm_type=minimal \
@@ -58,7 +59,11 @@ bosh -d elastic-stack deploy elastic-stack.yml \
      -v logstash_disk_type=5120 \
      -v logstash_network=default \
      -v logstash_azs="[z1, z2, z3]" \
-     -v readiness_probe_http_port=0 \
-     -v readiness_probe_tcp_port=5514 \
+     -v logstash_readiness_probe_http_port=0 \
+     -v logstash_readiness_probe_tcp_port=5514 \
+     -v kibana_instances=1 \
+     -v kibana_vm_type=minimal \
+     -v kibana_network=default \
+     -v kibana_azs="[z1, z2, z3]" \
      --no-redact
 ```
