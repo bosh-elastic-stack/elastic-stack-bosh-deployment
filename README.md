@@ -105,21 +105,21 @@ EOF
 
 ```
 bosh -d elastic-stack deploy elastic-stack.yml \
-     -l elastic-stack-bosh-deployment/versions.yml \
-     -o elastic-stack-bosh-deployment/ops-files/vm_types.yml \
-     -o elastic-stack-bosh-deployment/ops-files/disk_types.yml \
-     -o elastic-stack-bosh-deployment/ops-files/instances.yml \
-     -o elastic-stack-bosh-deployment/ops-files/networks.yml \
-     -o elastic-stack-bosh-deployment/ops-files/azs.yml \
-     -o elastic-stack-bosh-deployment/ops-files/elasticsearch-add-plugins-master.yml \
-     -o elastic-stack-bosh-deployment/ops-files/elasticsearch-https-and-basic-auth.yml \
-     -o elastic-stack-bosh-deployment/ops-files/logstash-readiness-probe.yml \
-     -o elastic-stack-bosh-deployment/ops-files/logstash-tls.yml \
-     -o elastic-stack-bosh-deployment/ops-files/logstash-elasticsearch-https.yml \
-     -o elastic-stack-bosh-deployment/ops-files/logstash-elasticsearch-basic-auth.yml \
-     -o elastic-stack-bosh-deployment/ops-files/kibana-https-and-basic-auth.yml \
-     -o elastic-stack-bosh-deployment/ops-files/kibana-elasticsearch-https.yml \
-     -o elastic-stack-bosh-deployment/ops-files/kibana-elasticsearch-basic-auth.yml \
+     -l versions.yml \
+     -o ops-files/vm_types.yml \
+     -o ops-files/disk_types.yml \
+     -o ops-files/instances.yml \
+     -o ops-files/networks.yml \
+     -o ops-files/azs.yml \
+     -o ops-files/elasticsearch-add-plugins-master.yml \
+     -o ops-files/elasticsearch-https-and-basic-auth.yml \
+     -o ops-files/logstash-readiness-probe.yml \
+     -o ops-files/logstash-tls.yml \
+     -o ops-files/logstash-elasticsearch-https.yml \
+     -o ops-files/logstash-elasticsearch-basic-auth.yml \
+     -o ops-files/kibana-https-and-basic-auth.yml \
+     -o ops-files/kibana-elasticsearch-https.yml \
+     -o ops-files/kibana-elasticsearch-basic-auth.yml \
      --var-file logstash.conf=logstash.conf \
      -v elasticsearch_master_instances=1 \
      -v elasticsearch_master_vm_type=small \
