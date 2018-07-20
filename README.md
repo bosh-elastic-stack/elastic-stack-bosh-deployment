@@ -104,7 +104,7 @@ EOF
 ```
 
 ```
-bosh -d elastic-stack deploy elastic-stack-bosh-deployment/elastic-stack.yml \
+bosh -d elastic-stack deploy elastic-stack.yml \
      -l elastic-stack-bosh-deployment/versions.yml \
      -o elastic-stack-bosh-deployment/ops-files/vm_types.yml \
      -o elastic-stack-bosh-deployment/ops-files/disk_types.yml \
