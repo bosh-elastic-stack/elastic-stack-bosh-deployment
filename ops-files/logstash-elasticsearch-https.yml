@@ -1,0 +1,6 @@
+- type: replace
+  path: /instance_groups/name=logstash/jobs/name=logstash/properties/elasticsearch?/protocol?
+  value: https
+- type: replace
+  path: /instance_groups/name=logstash/jobs/name=logstash/properties/elasticsearch?/port?
+  value: "443"
