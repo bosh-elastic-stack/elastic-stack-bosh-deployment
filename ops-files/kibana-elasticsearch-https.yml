@@ -1,0 +1,9 @@
+- type: replace
+  path: /instance_groups/name=kibana/jobs/name=kibana/properties/kibana?/elasticsearch?/protocol?
+  value: https
+- type: replace
+  path: /instance_groups/name=kibana/jobs/name=kibana/properties/kibana?/elasticsearch?/port?
+  value: "443"
+- type: replace
+  path: /instance_groups/name=kibana/jobs/name=kibana/properties/kibana?/elasticsearch?/ssl?/verificationMode?
+  value: ((kibana_elasticsearch_ssl_verification_mode))

@@ -1,0 +1,6 @@
+- type: replace
+  path: /instance_groups/name=kibana/jobs/name=kibana/properties/kibana?/elasticsearch?/username?
+  value: ((elasticsearch_username))
+- type: replace
+  path: /instance_groups/name=kibana/jobs/name=kibana/properties/kibana?/elasticsearch?/password?
+  value: ((elasticsearch_password))
