@@ -1,6 +1,9 @@
 # Elastic Stack BOSH deployment
 
 
+
+### Minimal Deployment
+
 ```
 cat <<EOF > logstash.conf
 input {
@@ -20,8 +23,6 @@ output {
 EOF
 ```
 
-* minimal deployment
-
 ```
 bosh -d elastic-stack deploy elastic-stack.yml \
      -l versions.yml \
@@ -29,7 +30,7 @@ bosh -d elastic-stack deploy elastic-stack.yml \
      --no-redact
 ```
 
-* clustered deployment
+### Clustered Deployment
 
 ```
 bosh -d elastic-stack deploy elastic-stack.yml \
@@ -72,7 +73,7 @@ bosh -d elastic-stack deploy elastic-stack.yml \
      --no-redact
 ```
 
-* TLS / HTTPS / Basic Authentication
+### TLS / HTTPS / Basic Authentication
 
 ![image](https://user-images.githubusercontent.com/106908/43011350-20e6e348-8c7e-11e8-8110-e3c7211d56fe.png)
 
