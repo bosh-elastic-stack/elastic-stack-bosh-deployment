@@ -74,6 +74,8 @@ bosh -d elastic-stack deploy elastic-stack.yml \
 
 * TLS / HTTPS / Basic Authentication
 
+![image](https://user-images.githubusercontent.com/106908/43011350-20e6e348-8c7e-11e8-8110-e3c7211d56fe.png)
+
 ```
 cat <<EOF > logstash.conf
 input {
