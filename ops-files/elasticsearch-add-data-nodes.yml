@@ -7,6 +7,8 @@
   value:
     name: elasticsearch-data
     jobs:
+    - name: java
+      release: openjdk
     - name: elasticsearch
       release: elasticsearch
       consumes:

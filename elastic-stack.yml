@@ -13,6 +13,10 @@ releases:
   version: ((kibana_version))
   url: https://github.com/making/kibana-boshrelease/releases/download/((kibana_version))/kibana-boshrelease-((kibana_version)).tgz
   sha1: ((kibana_sha1))
+- name: openjdk
+  version: ((openjdk_version))
+  url: https://github.com/making/openjdk-boshrelease/releases/download/((openjdk_version))/openjdk-boshrelease-((openjdk_version)).tgz
+  sha1: ((openjdk_sha1))
 
 stemcells:
 - os: ubuntu-trusty
@@ -22,6 +26,8 @@ stemcells:
 instance_groups:
 - name: elasticsearch-master
   jobs:
+  - name: java
+    release: openjdk
   - name: elasticsearch
     release: elasticsearch
     properties:
@@ -50,6 +56,8 @@ instance_groups:
   - name: default
 - name: logstash
   jobs:
+  - name: java
+    release: openjdk
   - name: logstash
     release: logstash
     properties:
