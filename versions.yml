@@ -8,3 +8,5 @@ openjdk_version: 0.1.1
 openjdk_sha1: 06e397150e924755421d21452bd8d42e4f4bed60
 nginx_version: 1.13.12
 nginx_sha1: bf156c545c45ed4e57563274f91dbd433000d776
+curator_version: 0.1.0
+curator_sha1: f64f54137c31a056f25436f2720c904e3150f4f5
