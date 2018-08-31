@@ -1,0 +1,23 @@
+- type: replace
+  path: /releases/-
+  value:
+    name: cron
+    version: ((cron_version))
+    url: https://bosh.io/d/github.com/cloudfoundry-community/cron-boshrelease?v=((cron_version))
+    sha1: ((cron_sha1))
+
+- type: replace
+  path: /instance_groups/name=kibana/jobs/-
+  value: 
+    name: cron
+    release: cron
+    properties:
+      cron:
+        entries:
+        - command: /var/vcap/jobs/curator/bin/run >> /var/vcap/sys/log/cron/curator.log
+          minute: '0'
+          hour: '0'
+          day: '*'
+          month: '*'
+          wday: '*'
+          user: vcap
