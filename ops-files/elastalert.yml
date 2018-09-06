@@ -1,0 +1,12 @@
+- type: replace
+  path: /releases/-
+  value:
+    name: elastalert
+    version: ((elastalert_version))
+    url: https://github.com/making/elastalert-boshrelease/releases/download/((elastalert_version))/elastalert-boshrelease-((elastalert_version)).tgz
+    sha1: ((elastalert_sha1))
+- type: replace
+  path: /instance_groups/name=kibana/jobs/-
+  value:
+    name: elastalert
+    release: elastalert

@@ -1,0 +1,16 @@
+- type: replace
+  path: /instance_groups/name=kibana/jobs/name=elastalert/properties?/elastalert?/rules?/-
+  value:
+    name: monitor-error-log
+    type: frequency
+    index: logstash-*
+    num_events: 3
+    timeframe:
+      minutes: 10
+    filter:
+    - query:
+        query_string:
+          query: "log:(ERROR)"
+    alert:
+    - slack
+    slack_webhook_url: ((slack_webhook_url))
