@@ -3,15 +3,15 @@ name: elastic-stack
 releases:
 - name: elasticsearch
   version: ((elasticsearch_version))
-  url: https://github.com/making/elasticsearch-boshrelease/releases/download/((elasticsearch_version))/elasticsearch-boshrelease-((elasticsearch_version)).tgz
+  url: https://github.com/bosh-elastic-stack/elasticsearch-boshrelease/releases/download/((elasticsearch_version))/elasticsearch-boshrelease-((elasticsearch_version)).tgz
   sha1: ((elasticsearch_sha1))
 - name: logstash
   version: ((logstash_version))
-  url: https://github.com/making/logstash-boshrelease/releases/download/((logstash_version))/logstash-boshrelease-((logstash_version)).tgz
+  url: https://github.com/bosh-elastic-stack/logstash-boshrelease/releases/download/((logstash_version))/logstash-boshrelease-((logstash_version)).tgz
   sha1: ((logstash_sha1))
 - name: kibana
   version: ((kibana_version))
-  url: https://github.com/making/kibana-boshrelease/releases/download/((kibana_version))/kibana-boshrelease-((kibana_version)).tgz
+  url: https://github.com/bosh-elastic-stack/kibana-boshrelease/releases/download/((kibana_version))/kibana-boshrelease-((kibana_version)).tgz
   sha1: ((kibana_sha1))
 - name: openjdk
   version: ((openjdk_version))
