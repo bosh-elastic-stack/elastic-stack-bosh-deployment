@@ -3,7 +3,7 @@
   value:
     name: elastalert
     version: ((elastalert_version))
-    url: https://github.com/making/elastalert-boshrelease/releases/download/((elastalert_version))/elastalert-boshrelease-((elastalert_version)).tgz
+    url: https://github.com/bosh-elastic-stack/elastalert-boshrelease/releases/download/((elastalert_version))/elastalert-boshrelease-((elastalert_version)).tgz
     sha1: ((elastalert_sha1))
 - type: replace
   path: /instance_groups/name=kibana/jobs/-
