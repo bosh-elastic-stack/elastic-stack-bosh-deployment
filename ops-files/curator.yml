@@ -3,7 +3,7 @@
   value:
     name: curator
     version: ((curator_version))
-    url: https://github.com/making/curator-boshrelease/releases/download/((curator_version))/curator-boshrelease-((curator_version)).tgz
+    url: https://github.com/bosh-elastic-stack/curator-boshrelease/releases/download/((curator_version))/curator-boshrelease-((curator_version)).tgz
     sha1: ((curator_sha1))
 
 - type: replace
