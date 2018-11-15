@@ -1,9 +1,9 @@
-elasticsearch_version: 0.6.2
-elasticsearch_sha1: a187a9740daa8ee0fcc215a6600137ccacc29612
-logstash_version: 0.5.1
-logstash_sha1: fc3258a2b3dbe5e36d12234ecf65f3d573bd1767
-kibana_version: 0.6.0
-kibana_sha1: 470ca04bc60828eba31a3636a753f58b1fc4744b
+elasticsearch_version: 0.7.0
+elasticsearch_sha1: 6c02d71bd94fe961692e8d250fcdc7e0ef19eb7c
+logstash_version: 0.6.0
+logstash_sha1: 2a4ef9ca49d4265bdb4837b83258a7edba352a84
+kibana_version: 0.7.0
+kibana_sha1: 48331e74f6d7fc0ef45995a1305f72937470b628
 openjdk_version: 8.0.1
 openjdk_sha1: d02566fb6d974de4b60bf44dc21e56422c7da3fd
 nginx_version: 1.13.12
