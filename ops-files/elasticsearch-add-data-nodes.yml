@@ -20,7 +20,7 @@
             allow_master: false
             allow_data: true
     instances: ((elasticsearch_data_instances))
-    stemcell: trusty
+    stemcell: xenial
     update:
       max_in_flight: 1
       serial: true

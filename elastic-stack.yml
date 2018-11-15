@@ -19,8 +19,8 @@ releases:
   sha1: ((openjdk_sha1))
 
 stemcells:
-- os: ubuntu-trusty
-  alias: trusty
+- os: ubuntu-xenial
+  alias: xenial
   version: latest
 
 instance_groups:
@@ -42,7 +42,7 @@ instance_groups:
       elasticsearch:
         from: elasticsearch-master
   instances: 1
-  stemcell: trusty
+  stemcell: xenial
   update:
     max_in_flight: 1
     serial: true
@@ -67,7 +67,7 @@ instance_groups:
       elasticsearch:
         from: elasticsearch-master
   instances: 1
-  stemcell: trusty
+  stemcell: xenial
   azs:
   - z1 
   - z2
@@ -87,7 +87,7 @@ instance_groups:
       elasticsearch:
         from: elasticsearch-master
   instances: 1
-  stemcell: trusty
+  stemcell: xenial
   update:
     max_in_flight: 1
     serial: true
