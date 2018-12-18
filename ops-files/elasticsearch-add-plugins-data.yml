@@ -1,5 +1,40 @@
 - type: replace
+  path: /instance_groups/name=elasticsearch-data/jobs/name=elasticsearch/properties/elasticsearch/plugins?/-
+  value: 
+    analysis-kuromoji: /var/vcap/packages/analysis-kuromoji/analysis-kuromoji.zip
+- type: replace
+  path: /instance_groups/name=elasticsearch-data/jobs/name=elasticsearch/properties/elasticsearch/plugins?/-
+  value: 
+    epository-s3: /var/vcap/packages/repository-s3/repository-s3.zip
+- type: replace
+  path: /instance_groups/name=elasticsearch-data/jobs/name=elasticsearch/properties/elasticsearch/plugins?/-
+  value: 
+    repository-gcs: /var/vcap/packages/repository-gcs/repository-gcs.zip
+- type: replace
+  path: /instance_groups/name=elasticsearch-data/jobs/name=elasticsearch/properties/elasticsearch/plugins?/-
+  value: 
+    repository-azure: /var/vcap/packages/repository-azure/repository-azure.zip
+- type: replace
+  path: /instance_groups/name=elasticsearch-data/jobs/name=elasticsearch/properties/elasticsearch/plugin_install_opts?
+  value: 
+  - --batch
+- type: replace
   path: /instance_groups/name=elasticsearch-data/jobs/-
   value:
-    name: elasticsearch-plugins
+    name: analysis-kuromoji
+    release: elasticsearch
+- type: replace
+  path: /instance_groups/name=elasticsearch-data/jobs/-
+  value:
+    name: repository-s3
+    release: elasticsearch
+- type: replace
+  path: /instance_groups/name=elasticsearch-data/jobs/-
+  value:
+    name: repository-gcs
+    release: elasticsearch
+- type: replace
+  path: /instance_groups/name=elasticsearch-data/jobs/-
+  value:
+    name: repository-azure
     release: elasticsearch

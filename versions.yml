@@ -1,5 +1,5 @@
-elasticsearch_version: 0.10.1
-elasticsearch_sha1: c2d02f2c6f2b3764b5aa2ba3a078aec2e7d2e937
+elasticsearch_version: 0.11.0
+elasticsearch_sha1: deaa62e81e45cb67b965571c24389b2c9da293d9
 logstash_version: 0.6.2
 logstash_sha1: b72acd309c8c1f12fdff8fe91727dcef6cab67c1
 kibana_version: 0.7.2
