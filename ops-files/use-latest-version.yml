@@ -1,0 +1,17 @@
+- type: replace
+  path: /releases/name=elasticsearch
+  value:
+    name: elasticsearch
+    version: latest
+
+- type: replace
+  path: /releases/name=logstash
+  value:
+    name: logstash
+    version: latest
+
+- type: replace
+  path: /releases/name=kibana
+  value:
+    name: kibana
+    version: latest
