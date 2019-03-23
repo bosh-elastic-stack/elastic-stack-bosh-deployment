@@ -1,0 +1,3 @@
+- type: replace
+  path: /instance_groups/name=elasticsearch-master/jobs/name=elasticsearch/properties/elasticsearch/heap_size?
+  value: ((elasticsearch_heapsize))
