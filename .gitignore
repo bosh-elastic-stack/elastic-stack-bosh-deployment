@@ -1,4 +1,4 @@
 deploy-elastic-stack.sh
 logstash.conf
 .DS_Store
-
+es-creds.yml
