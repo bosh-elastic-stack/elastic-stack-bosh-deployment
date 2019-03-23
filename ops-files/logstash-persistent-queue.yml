@@ -1,3 +1,6 @@
 - type: replace
-  path: /instance_groups/name=logstash/jobs/name=logstash/properties/logstash/config_options?/queue.type?
+  path: /instance_groups/name=logstash/jobs/name=logstash/properties/logstash/config_options?/queue.type
   value: persisted
+- type: replace
+  path: /instance_groups/name=logstash/jobs/name=logstash/properties/logstash/config_options?/queue.max_bytes
+  value: ((logstash_queue_max_bytes))
