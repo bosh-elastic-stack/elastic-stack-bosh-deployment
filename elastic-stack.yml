@@ -62,7 +62,10 @@ instance_groups:
     release: logstash
     properties:
       logstash:
-        conf: ((logstash.conf))
+        pipelines:
+        - name: bosh
+          config: 
+            all: ((logstash.conf))
     consumes:
       elasticsearch:
         from: elasticsearch-master
