@@ -63,6 +63,14 @@
         }
 
 - type: replace
+  path: /instance_groups/name=elasticsearch-master/jobs/name=elasticsearch/properties/elasticsearch/client?
+  value:
+    protocol: https
+    port: 443
+    username: ((elasticsearch_username))
+    password: ((elasticsearch_password))
+
+- type: replace
   path: /variables?/name=elasticsearch_password?
   value:
     name: elasticsearch_password
