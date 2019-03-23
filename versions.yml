@@ -1,7 +1,7 @@
 elasticsearch_version: 0.17.2
 elasticsearch_sha1: 24dc61ddc06debdbcf53253b9aabf28b81f8d237
-logstash_version: 0.10.0
-logstash_sha1: 6b5c1656f2f24c2c6b4c832586853293cccc7d39
+logstash_version: 0.10.1
+logstash_sha1: 29c1c77ca75735e3d7f680dd74436c5db58e442a
 kibana_version: 0.11.1
 kibana_sha1: 1407912891bba9c2343e214df6bfec005badee87
 openjdk_version: 8.0.1
