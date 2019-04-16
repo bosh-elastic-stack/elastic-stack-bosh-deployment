@@ -3,6 +3,10 @@
 * Elastic Stack 7.0.x => [`master`](https://github.com/bosh-elastic-stack/elastic-stack-bosh-deployment/tree/master) branch
 * Elastic Stack 6.7.x => [`6.7.x`](https://github.com/bosh-elastic-stack/elastic-stack-bosh-deployment/tree/6.7.x) branch
 
+If you plan to migrate from previous version to this version,
+* Make sure you are running Elasticsearch 6.7.x (use [`6.7.x`](https://github.com/bosh-elastic-stack/elastic-stack-bosh-deployment/tree/6.7.x) branch or [`6.7.1_2019-04-05`](https://github.com/bosh-elastic-stack/elastic-stack-bosh-deployment/blob/6.7.1_2019-04-05/README.md) tag)
+* Set `elasticsearch.migrate_6_to_7` property to `true` 
+
 ### Minimal Deployment
 
 ```
