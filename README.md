@@ -1,6 +1,7 @@
 # Elastic Stack BOSH deployment
 
-
+* Elastic Stack 7.0.x => [`master`](https://github.com/bosh-elastic-stack/elastic-stack-bosh-deployment/tree/master) branch
+* Elastic Stack 6.7.x => [`6.7.x`](https://github.com/bosh-elastic-stack/elastic-stack-bosh-deployment/tree/6.7.x) branch
 
 ### Minimal Deployment
 
