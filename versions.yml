@@ -8,8 +8,8 @@ openjdk_version: 8.0.4
 openjdk_sha1: 43979a6595282fcf4ac6269135968acc0d96d297
 nginx_version: 1.13.12
 nginx_sha1: bf156c545c45ed4e57563274f91dbd433000d776
-curator_version: 0.2.4
-curator_sha1: 4dce7d5fe72681c7c147dea6e924a65bd1f9d57a
+curator_version: 0.3.0
+curator_sha1: 4507edf28df08ee7956e50c9e53404b9606ef848
 elastalert_version: 0.3.1
 elastalert_sha1: 9cad563306ee85bf8e3f849ed75336cd36fc2025
 cron_version: 1.1.3
