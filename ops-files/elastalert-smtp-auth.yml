@@ -1,0 +1,7 @@
+- type: replace
+  path: /instance_groups/name=kibana/jobs/name=elastalert/properties?/elastalert?/smtp_user?
+  value: ((smtp_user))
+
+- type: replace
+  path: /instance_groups/name=kibana/jobs/name=elastalert/properties?/elastalert?/smtp_password?
+  value: ((smtp_password))
