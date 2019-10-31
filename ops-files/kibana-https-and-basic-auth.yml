@@ -53,6 +53,7 @@
               proxy_http_version 1.1;
               proxy_set_header Connection "";
               proxy_buffering off;
+              proxy_buffer_size 8k;
               client_max_body_size 0;
               proxy_read_timeout 36000s;
               proxy_redirect off;
